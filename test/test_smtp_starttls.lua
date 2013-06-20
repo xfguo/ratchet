@@ -154,7 +154,7 @@ ssl2 = ratchet.ssl.new(ratchet.ssl.SSLv3_client)
 ssl2:load_cas(nil, "cert.pem")
 
 kernel = ratchet.new(function ()
-    ratchet.thread.attach(server_ctx, "localhost", 10025)
+    ratchet.thread.attach(server_ctx, "127.0.0.1", 10025)
 end)
 kernel:loop()
 

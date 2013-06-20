@@ -58,7 +58,7 @@ function zmqctx2(where)
 end
 
 kernel = ratchet.new(function ()
-    ratchet.thread.attach(tcpctx1, "localhost", 10025)
+    ratchet.thread.attach(tcpctx1, "127.0.0.1", 10025)
     ratchet.thread.attach(zmqctx1, "req:tcp://*:10026")
 end)
 kernel:loop()

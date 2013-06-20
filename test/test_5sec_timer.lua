@@ -1,11 +1,11 @@
 require "ratchet"
 
 function ctx1()
-    ratchet.timer(5.0)
+    ratchet.thread.timer(5.0)
 end
 
 local r = ratchet.new(function ()
-    ratchet.attach(ctx1)
+    ratchet.thread.attach(ctx1)
 end)
 
 r:loop()

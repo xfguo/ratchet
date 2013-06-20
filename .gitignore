@@ -7,7 +7,6 @@ stamp-h1
 configure
 config.sub
 config.h.in~
-config.h
 config.log
 config.status
 config.guess

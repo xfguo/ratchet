@@ -7,7 +7,7 @@ function ctx1(host, port)
     socket:bind(rec.addr)
     socket:listen()
 
-    connect_client("localhost", port)
+    connect_client("127.0.0.1", port)
 
     local client, from = socket:accept()
 

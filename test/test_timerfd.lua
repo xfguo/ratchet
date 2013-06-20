@@ -1,12 +1,14 @@
 require "ratchet"
 
 function ctx1 ()
+    local i = 0
     local tfd = ratchet.timerfd.new()
     tfd:settime(1.0, 1.0)
 
-    while true do
+    while i < 3 do
         local fired = tfd:read()
         print("fire!")
+        i = i + 1
     end
 end
 

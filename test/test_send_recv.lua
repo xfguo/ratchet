@@ -42,7 +42,7 @@ function ctx3(host, port)
 end
 
 kernel = ratchet.new(function ()
-    ratchet.thread.attach(ctx1, "localhost", 10025)
+    ratchet.thread.attach(ctx1, "127.0.0.1", 10025)
 end)
 kernel:loop()
 

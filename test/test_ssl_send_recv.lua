@@ -56,7 +56,7 @@ function ctx2(host, port)
     assert(got_cert and verified and host_matched)
 
     assert("AES256-SHA" == enc:get_cipher())
-    assert("CN=localhost" == enc:get_rfc2253())
+    assert("CN=127.0.0.1" == enc:get_rfc2253())
 
     local data = socket:recv(5)
     assert(data == "hello")
@@ -79,7 +79,7 @@ ssl2 = ratchet.ssl.new(ratchet.ssl.SSLv3_client)
 ssl2:load_cas(nil, "cert.pem")
 
 kernel = ratchet.new(function ()
-    ratchet.thread.attach(ctx1, "localhost", 10025)
+    ratchet.thread.attach(ctx1, "127.0.0.1", 10025)
 end)
 kernel:loop()
 

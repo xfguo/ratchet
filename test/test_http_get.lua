@@ -93,7 +93,7 @@ end
 -- }}}
 
 kernel = ratchet.new(function ()
-    ratchet.thread.attach(server_ctx, "localhost", 10080)
+    ratchet.thread.attach(server_ctx, "127.0.0.1", 10080)
 end)
 kernel:loop()
 
